@@ -1,7 +1,7 @@
 import React from "react";
 import { Meta } from "@storybook/react";
 import LoginForm from "../components/auth/LoginForm";
-import { BrowserRouter } from "react-router";
+import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { LoginProps } from "../types/login.interface";
 import AuthLayout from "@components/auth/AuthLayout";

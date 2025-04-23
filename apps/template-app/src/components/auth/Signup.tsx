@@ -1,5 +1,5 @@
 import { SignupForm } from "ileaf-ui";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const navigate = useNavigate();

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router";
+import { Link, useLocation } from "react-router-dom";
 import { LuX, LuChevronLeft } from "react-icons/lu";
 import { useSidebarContext } from "../../context/SidebarContext";
 import { SidebarProps } from "../../types/sidebar.interface";
@@ -75,9 +75,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                   to={path}
                   className={`flex ${isCollapsed ? "w-fit" : "w-full"} items-center px-4 py-2 rounded-md gap-2 ${isActive(path) ? "bg-primary text-white" : "hover:bg-primary text-secondary hover:text-white"}`}
                 >
-                  <span className="">
-                    <Icon size="18" />
-                  </span>
+                  <span className="">{Icon}</span>
                   {!isCollapsed && <span className="text-lg">{label}</span>}
                 </Link>
               ))}
@@ -100,9 +98,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                     to={path}
                     className={`flex items-center gap-2 px-4 py-2 ${isCollapsed ? "w-fit" : "w-full"} ${isActive(path) ? "bg-primary text-white" : "hover:text-white text-secondary hover:bg-primary"} rounded-md`}
                   >
-                    <span className="">
-                      <Icon size="18" />
-                    </span>
+                    <span className="">{Icon}</span>
                     {!isCollapsed && <span>{label}</span>}
                   </Link>
                 ))}

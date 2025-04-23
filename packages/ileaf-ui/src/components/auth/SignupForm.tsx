@@ -3,7 +3,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import HookFormTextInput from "../form/hook-form/HookFormTextInput";
 import Button from "../Button";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { SignupProps } from "../../types/signup.interface";
 import { defaultSignupSchema } from "src/schema/signup.schema";
 import useSignup from "@hooks/useSignup";

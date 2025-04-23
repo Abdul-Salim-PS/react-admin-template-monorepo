@@ -4,7 +4,7 @@ import { cn } from "@lib/utils";
 import React, { useEffect, useRef, useState } from "react";
 import { IconType } from "react-icons";
 import { LuChevronDown, LuLogOut } from "react-icons/lu";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 export interface ProfileLink {
   path: string;

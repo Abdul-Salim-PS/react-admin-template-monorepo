@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "../components/layout/Sidebar";
-import { BrowserRouter } from "react-router";
+import { BrowserRouter } from "react-router-dom";
 import { SidebarProvider } from "../context/SidebarContext";
 import Header from "../components/layout/Header";
 import { LuCircleUser, LuHouse, LuSettings, LuUser } from "react-icons/lu";

@@ -1,6 +1,6 @@
 "use client";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { useSearchParams } from "react-router";
+import { useSearchParams } from "react-router-dom";
 import { Metadata } from "../../types/pagination.interface";
 import { cn } from "../../lib/utils";
 

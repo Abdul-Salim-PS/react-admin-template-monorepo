@@ -1,10 +1,10 @@
-import { Route, Routes } from "react-router";
+import { Route, Routes } from "react-router-dom";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import Dashboard from "./pages/Dashboard";
-import Layout from "./components/auth/Layout";
-import Login from "./components/auth/Login";
-import Signup from "./components/auth/Signup";
 import MainLayout from "./components/MainLayout";
+import Login from "./components/auth/Login";
+import Layout from "./components/auth/Layout";
+import Signup from "./components/auth/Signup";
 
 function App() {
   const client = new QueryClient();

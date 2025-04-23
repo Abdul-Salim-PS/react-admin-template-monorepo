@@ -1,5 +1,5 @@
 import { AuthLayout } from "ileaf-ui";
-import { Outlet } from "react-router";
+import { Outlet } from "react-router-dom";
 import Bg from "../../assets/auth-layout.png";
 
 const Layout = () => {

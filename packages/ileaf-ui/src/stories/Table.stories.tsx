@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DataTable from "../components/table/Table";
 import { createColumnHelper } from "@tanstack/react-table";
-import { BrowserRouter } from "react-router";
+import { BrowserRouter } from "react-router-dom";
 import { StoryFn, Meta } from "@storybook/react";
 import { DataTableProps } from "../types/table.interface";
 

@@ -3,7 +3,7 @@ import React, { ReactNode } from "react";
 import { useSidebarContext } from "../../context/SidebarContext";
 import Profile, { ProfileLink } from "./Profile";
 import { LuMenu } from "react-icons/lu";
-import { useLocation } from "react-router";
+import { useLocation } from "react-router-dom";
 import { useHeaderContext } from "../../context/HeaderContext";
 import { ConfirmPromptProvider } from "@context/ConfirmContext";
 import { cn } from "@lib/utils";

@@ -1,5 +1,11 @@
 "use client";
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from "react";
 
 interface SidebarContextType {
   showSidebar: boolean;
@@ -10,7 +16,7 @@ interface SidebarContextType {
 
 interface SidebarItem {
   label: string;
-  Icon: React.ElementType; // Adjusted to use React.ElementType for icons
+  Icon: ReactNode;
   path: string;
 }
 

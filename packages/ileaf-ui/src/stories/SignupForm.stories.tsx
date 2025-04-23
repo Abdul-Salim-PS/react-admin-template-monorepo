@@ -1,6 +1,6 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { BrowserRouter } from "react-router";
+import { BrowserRouter } from "react-router-dom";
 import { AuthLayout } from "../components";
 import SignupForm from "../components/auth/SignupForm";
 
