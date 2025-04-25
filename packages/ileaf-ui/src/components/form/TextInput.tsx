@@ -54,7 +54,6 @@ const TextInput: React.FC<TextInputProps> = ({
   eyeClosedIcon = <FaEyeSlash />,
   ...rest
 }) => {
-  console.log(inputClasses, outerContainerClass, "Hi");
   const [showPassword, setShowPassword] = useState(false); // State for password visibility
 
   const baseStyles =
@@ -96,7 +95,7 @@ const TextInput: React.FC<TextInputProps> = ({
         <input
           type={isPassword && !showPassword ? "password" : "text"} // Toggle password visibility
           className={`${baseStyles} ${sizeStyles[inputSize]} ${inputPadding} ${iconPosition === "right" ? "pr-10" : ""} ${inputClasses}autofill:bg-white 
-            autofill:shadow-[inset_0_0_0px_1000px_white] autofill:text-black`}
+            autofill:shadow-[inset_0_0_0px_1000px_white] autofill:text-black placeholder:text-sm`}
           {...rest}
         />
         {isPassword && (

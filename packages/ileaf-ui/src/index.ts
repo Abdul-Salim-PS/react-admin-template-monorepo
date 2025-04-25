@@ -7,6 +7,9 @@ export { default as LoginForm } from "@components/auth/LoginForm";
 export { default as SignupForm } from "@components/auth/SignupForm";
 export { default as PrimaryCard } from "@components/cards/PrimaryCard";
 export { default as StatsCard } from "@components/cards/StatsCard";
+export { default as Avatar } from "@components/layout/Avatar";
+export { default as ProfileForm } from "@components/form/ProfileForm";
+export { default as ChangePassword } from "@components/form/ChangePassword";
 
 export { ConfirmPromptProvider } from "@context/ConfirmContext";
 export { useConfirmPrompt } from "@context/ConfirmContext";

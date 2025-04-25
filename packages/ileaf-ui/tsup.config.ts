@@ -15,7 +15,7 @@ export default defineConfig({
     "classnames",
     "country-flag-icons/unicode",
     "react-icons",
-    "react-router",
+    "react-router-dom",
   ],
   esbuildOptions(options) {
     options.banner = {

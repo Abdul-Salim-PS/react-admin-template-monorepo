@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @config "../tailwind.config.ts";
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @theme {
   --color-primary: #5046e5;
   --color-secondary: #717171;
@@ -21,4 +20,5 @@ input:-webkit-autofill:active {
 body {
   background-color: #f5f9ff;
   color: #000;
+  font-family: var(--font-primary);
 }

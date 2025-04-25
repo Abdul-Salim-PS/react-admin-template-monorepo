@@ -5,6 +5,7 @@ import MainLayout from "./components/MainLayout";
 import Login from "./components/auth/Login";
 import Layout from "./components/auth/Layout";
 import Signup from "./components/auth/Signup";
+import Profile from "./pages/Profile";
 
 function App() {
   const client = new QueryClient();
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="" element={<Dashboard />} />
+          <Route path="profile" element={<Profile />} />
           <Route path="*" element={<Dashboard />} />
         </Route>
         <Route element={<Layout />}>

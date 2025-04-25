@@ -15,6 +15,7 @@ interface HookFormTextInputProps {
   iconPosition?: "left" | "right";
   iconContainerClasses?: string;
   isPassword?: boolean;
+  placeholder?: string;
 }
 
 const HookFormTextInput: React.FC<HookFormTextInputProps> = ({
@@ -28,6 +29,7 @@ const HookFormTextInput: React.FC<HookFormTextInputProps> = ({
   iconPosition,
   iconContainerClasses,
   isPassword,
+  placeholder = "",
 }) => {
   const {
     field,
@@ -37,6 +39,7 @@ const HookFormTextInput: React.FC<HookFormTextInputProps> = ({
   return (
     <TextInput
       {...field}
+      placeholder={placeholder}
       label={label}
       variant={variant}
       inputSize={inputSize}

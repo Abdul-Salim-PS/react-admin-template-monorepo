@@ -3,7 +3,13 @@
 import { useUserStore } from "../store/userStore";
 import { Header, HeaderProvider, Sidebar, SidebarProvider } from "ileaf-ui";
 import { useEffect, useState } from "react";
-import { LuCircleUser, LuHouse, LuSettings, LuUser } from "react-icons/lu";
+import {
+  LuBox,
+  LuHome,
+  LuSettings,
+  LuUser,
+  LuUserCircle,
+} from "react-icons/lu";
 import { Outlet } from "react-router-dom";
 
 const MainLayout = () => {
@@ -12,9 +18,14 @@ const MainLayout = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      login({ email: "", first_name: "", id: "", last_name: "" });
+      login({
+        email: "test@email.com",
+        first_name: "Test",
+        id: "",
+        last_name: "User",
+      });
       setLoading(false);
-    }, 5000);
+    }, 1000);
   }, []);
 
   if (loading)
@@ -31,8 +42,9 @@ const MainLayout = () => {
       <div className="flex h-screen w-screen">
         <SidebarProvider
           primaryItems={[
-            { label: "Home", Icon: <LuHouse size={18} />, path: "/" },
+            { label: "Home", Icon: <LuHome size={18} />, path: "/" },
             { label: "Users", Icon: <LuUser size={18} />, path: "/users" },
+            { label: "Items", Icon: <LuBox size={18} />, path: "/items" },
           ]}
           secondaryItems={[
             {
@@ -50,7 +62,7 @@ const MainLayout = () => {
                   {
                     label: "Profile",
                     path: "/profile",
-                    Icon: LuCircleUser,
+                    Icon: LuUserCircle,
                   },
                 ]}
                 userName="Abdul"

@@ -61,7 +61,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         >
           <div className="flex flex-col">
             {primaryHeader ? (
-              <p className="px-4 text-[#717171] text-xs mb-2 uppercase">
+              <p className="px-4 text-[#717171] text-xs mb-3 uppercase">
                 {primaryHeader}
               </p>
             ) : (
@@ -73,10 +73,10 @@ const Sidebar: React.FC<SidebarProps> = ({
                 <Link
                   key={label}
                   to={path}
-                  className={`flex ${isCollapsed ? "w-fit" : "w-full"} items-center px-4 py-2 rounded-md gap-2 ${isActive(path) ? "bg-primary text-white" : "hover:bg-primary text-secondary hover:text-white"}`}
+                  className={`flex ${isCollapsed ? "w-fit" : "w-full"} items-center px-4 py-1 rounded-md gap-2 ${isActive(path) ? "bg-primary text-white" : "hover:bg-primary text-secondary hover:text-white"}`}
                 >
                   <span className="">{Icon}</span>
-                  {!isCollapsed && <span className="text-lg">{label}</span>}
+                  {!isCollapsed && <span className="lg:text-lg">{label}</span>}
                 </Link>
               ))}
             </div>
@@ -96,7 +96,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                   <Link
                     key={label}
                     to={path}
-                    className={`flex items-center gap-2 px-4 py-2 ${isCollapsed ? "w-fit" : "w-full"} ${isActive(path) ? "bg-primary text-white" : "hover:text-white text-secondary hover:bg-primary"} rounded-md`}
+                    className={`flex items-center gap-2 px-4 py-1 ${isCollapsed ? "w-fit" : "w-full"} ${isActive(path) ? "bg-primary text-white" : "hover:text-white text-secondary hover:bg-primary"} rounded-md`}
                   >
                     <span className="">{Icon}</span>
                     {!isCollapsed && <span>{label}</span>}
