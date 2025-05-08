@@ -19,13 +19,16 @@ const Template = () => {
       title: "Confirm Action",
       description: "Are you sure you want to proceed?",
       onConfirm: () => {
-        return new Promise((resolve) => {
+        return new Promise((resolve, reject) => {
           setTimeout(() => {
-            console.log("Confirmed!");
-            resolve(true);
+            resolve();
           }, 3000);
         });
       },
+      onCancel: () => console.log("Cancelled!"),
+      cancelButtonText: "No",
+      confirmButtonText: "Yes",
+      className: "custom-modal-class", // Example of passing a custom class
     });
   };
   return (

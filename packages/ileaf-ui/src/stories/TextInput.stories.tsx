@@ -1,6 +1,6 @@
 import React from "react";
 import TextInput from "../components/form/TextInput";
-import MyCustomIcon from "./assets/CustomIcon";
+import { FaUser } from "react-icons/fa";
 
 export default {
   title: "Components/TextInput",
@@ -48,7 +48,7 @@ WithCustomIconLeft.args = {
   variant: "default",
   inputSize: "md",
   placeholder: "Enter text...",
-  icon: <MyCustomIcon className="w-4 h-4" />,
+  icon: <FaUser className="w-4 h-4" />,
   iconPosition: "left",
 };
 
@@ -58,7 +58,7 @@ WithCustomIconRight.args = {
   variant: "default",
   inputSize: "md",
   placeholder: "Enter text...",
-  icon: <MyCustomIcon className="w-4 h-4" />,
+  icon: <FaUser className="w-4 h-4" />,
   iconPosition: "right",
 };
 

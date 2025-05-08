@@ -11,7 +11,7 @@ export default defineConfig({
   external: [
     "react",
     "react-dom",
-    "tailwindcss", // Make sure tailwindcss is external
+    "tailwindcss",
     "classnames",
     "country-flag-icons/unicode",
     "react-icons",
@@ -27,4 +27,5 @@ export default defineConfig({
       "@context": resolve(__dirname, "src/context"),
     };
   },
+  // onSuccess: "npm run build:css",
 });

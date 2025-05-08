@@ -17,4 +17,7 @@ export interface LoginProps {
   onSuccess?: (data: Record<string, string | number>) => void;
   onError?: (error: string) => void;
   schema?: ZodSchema;
+  hideSignup?: boolean;
+  signupLink?: string;
+  signupText?: string;
 }

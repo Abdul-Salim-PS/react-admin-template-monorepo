@@ -175,6 +175,68 @@ A component for navigating through pages of data.
 - **onNext**: `(page: number) => void` - Callback for next page.
 - **onPrev**: `(page: number) => void` - Callback for previous page.
 
+### 13. **Avatar**
+
+A component for displaying and uploading user avatars.
+
+#### Props:
+
+- **imageUrl**: `string` - The URL of the avatar image.
+- **handleUpload**: `(file: File) => Promise<void>` - Function to handle file upload.
+
+### 14. **ChangePassword**
+
+A form component for changing user passwords.
+
+#### Props:
+
+- **handleChangePassword**: `(data: ChangePasswordData) => Promise<void>` - Function to handle password change.
+
+### 15. **ProfileForm**
+
+A form component for updating user profile information.
+
+#### Props:
+
+- **handleSubmit**: `(data: FormData) => Promise<void>` - Function to handle form submission.
+- **initialValues**: `FormData | null` - Initial values for the form.
+
+### 16. **LoginForm**
+
+A form component for user login.
+
+#### Props:
+
+- **emailRegex**: `RegExp` - Optional regex for email validation.
+- **children**: `React.ReactNode` - Optional children to render inside the form.
+- **buttonText**: `string` - Text for the login button.
+- **loginHeader**: `string` - Header text for the login form.
+- **headerDescription**: `string` - Description text for the login form.
+- **onSubmit**: `(val: any) => Promise<void>` - Function to call on form submission.
+- **onSuccess**: `(val: any) => Promise<void>` - Function to call on successful login.
+- **onError**: `(err: any) => Promise<void>` - Function to call on login error.
+- **schema**: `ZodSchema` - Optional validation schema.
+- **hideSignup**: `boolean` - If true, hides the signup link.
+- **signupLink**: `string` - URL for the signup page.
+- **signupText**: `string` - Text for the signup link.
+
+### 17. **SignupForm**
+
+A form component for user signup.
+
+#### Props:
+
+- **buttonText**: `string` - Text for the signup button.
+- **signupHeader**: `string` - Header text for the signup form.
+- **headerDescription**: `string` - Description text for the signup form.
+- **onSubmit**: `(val: any) => Promise<void>` - Function to call on form submission.
+- **onSuccess**: `(val: any) => Promise<void>` - Function to call on successful signup.
+- **onError**: `(err: any) => Promise<void>` - Function to call on signup error.
+- **schema**: `ZodSchema` - Optional validation schema.
+- **hideSignin**: `boolean` - If true, hides the signin link.
+- **signinLink**: `string` - URL for the signin page.
+- **signinText**: `string` - Text for the signin link.
+
 ## Conclusion
 
 The **ileaf-ui** library provides a comprehensive set of components that can be used to build efficient and visually appealing admin dashboards. Each component is designed with flexibility and reusability in mind, making it easier for developers to create consistent user interfaces.

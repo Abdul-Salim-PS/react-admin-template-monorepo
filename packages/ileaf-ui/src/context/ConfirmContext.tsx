@@ -6,13 +6,16 @@ import { IconType } from "react-icons";
 interface ConfirmModalProps {
   title: string;
   description: string;
-  children?: React.ReactNode;
-  loading?: boolean;
-  onConfirm: () => void;
+  onConfirm: () => Promise<void>; // Updated to allow promises
   onCancel?: () => void;
+  onClose?: () => void;
+  cancelButtonText?: string;
+  confirmButtonText?: string;
   Icon?: IconType;
   iconColor?: string;
   iconContainerColor?: string;
+  className?: string; // Custom styles
+  allowOutsideClick?: boolean; // New prop for outside click behavior
 }
 
 interface ModalContextType {
@@ -27,12 +30,17 @@ export const ConfirmPromptProvider: React.FC<{ children: ReactNode }> = ({
 }) => {
   const [modalProps, setModalProps] = useState<ConfirmModalProps | null>(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null); // State for error messages
 
   const showModal = (props: ConfirmModalProps) => {
     setModalProps(props);
+    setError(null);
   };
 
   const hideModal = () => {
+    if (modalProps?.onClose) {
+      modalProps.onClose();
+    }
     setModalProps(null);
   };
 
@@ -50,6 +58,7 @@ export const ConfirmPromptProvider: React.FC<{ children: ReactNode }> = ({
         await modalProps.onConfirm();
         hideModal();
       } catch (err) {
+        setError("An error occurred while confirming."); // Set error message
         console.error(err);
       } finally {
         setLoading(false);
@@ -67,6 +76,7 @@ export const ConfirmPromptProvider: React.FC<{ children: ReactNode }> = ({
           onConfirm={handleConfirm}
           onCancel={handleCancel}
           loading={loading}
+          error={error}
         />
       )}
     </ModalContext.Provider>

@@ -3,7 +3,7 @@ import Sidebar from "../components/layout/Sidebar";
 import { BrowserRouter } from "react-router-dom";
 import { SidebarProvider } from "../context/SidebarContext";
 import Header from "../components/layout/Header";
-import { LuCircleUser, LuHouse, LuSettings, LuUser } from "react-icons/lu";
+import { LuHome, LuSettings, LuUser } from "react-icons/lu";
 import { HeaderProvider } from "../context/HeaderContext";
 import { SidebarProps } from "../types/sidebar.interface";
 
@@ -17,7 +17,7 @@ const Wrapper = (args: SidebarProps) => {
     <BrowserRouter>
       <SidebarProvider
         primaryItems={[
-          { label: "Home", Icon: LuHouse, path: "/" },
+          { label: "Home", Icon: LuHome, path: "/" },
           { label: "About", Icon: LuUser, path: "/about" },
         ]}
         secondaryItems={[
@@ -40,7 +40,7 @@ const Template = (args: SidebarProps) => {
           {
             label: "Profile",
             path: "/profile",
-            Icon: LuCircleUser,
+            Icon: LuUser,
           },
         ]}
       />

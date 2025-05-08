@@ -3,9 +3,10 @@ import react from "@vitejs/plugin-react";
 import * as path from "path";
 import { resolve } from "path";
 import dts from "vite-plugin-dts";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  plugins: [react(), dts({ include: ["src"] })],
+  plugins: [react(), tailwindcss(), dts({ include: ["src"] })],
   resolve: {
     alias: {
       "@components": path.resolve("./src/components"),

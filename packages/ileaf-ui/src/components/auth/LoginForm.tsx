@@ -20,6 +20,9 @@ const LoginForm = ({
   onSuccess = async (val) => console.log(val),
   onError = async (err) => console.log(err),
   schema,
+  hideSignup = false,
+  signupLink = "/signup",
+  signupText = "Sign up",
 }: LoginProps) => {
   const defaultLoginSchema = z.object({
     email: z
@@ -96,15 +99,19 @@ const LoginForm = ({
           )}
         </form>
       </FormProvider>
-      <div className="flex mt-5 justify-center gap-x-2">
-        <p className="text-sm font-normal">Don&apos;t have an account?</p>
-        <Link
-          className="font-semibold hover:underline text-sm text-primary"
-          to="/signup"
-        >
-          Sign up
-        </Link>
-      </div>
+      {!hideSignup ? (
+        <div className="flex mt-5 justify-center gap-x-2">
+          <p className="text-sm font-normal">Don&apos;t have an account?</p>
+          <Link
+            className="font-semibold hover:underline text-sm text-primary"
+            to={signupLink}
+          >
+            {signupText}
+          </Link>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

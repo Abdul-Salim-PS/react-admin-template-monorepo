@@ -41,7 +41,7 @@ const Profile: React.FC<ProfileProps> = ({
     showModal({
       title: "Logout",
       description: "Are you sure you want to logout?",
-      onConfirm: () => {
+      onConfirm: async () => {
         // handle logout
       },
       Icon: LuLogOut,

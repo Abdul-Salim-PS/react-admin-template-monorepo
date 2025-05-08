@@ -1,8 +1,8 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { BrowserRouter } from "react-router-dom";
-import { AuthLayout } from "../components";
 import SignupForm from "../components/auth/SignupForm";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 type Story = StoryObj<typeof SignupForm>;
 
@@ -13,24 +13,17 @@ export default {
 
 const Template: Story<{ emailRegex?: RegExp; buttonText?: string }> = (
   args
-) => (
-  <BrowserRouter>
-    <SignupForm {...args} />
-  </BrowserRouter>
-);
+) => {
+  const client = new QueryClient();
 
-const View: Story<{ emailRegex?: RegExp; buttonText?: string }> = (args) => (
-  <BrowserRouter>
-    <AuthLayout
-      logoSrc="https://www.ileafsolutions.com/assets/images/logo.svg"
-      backgroundColor="#0b012d"
-      headerColor="#fff"
-      title="Create new Account"
-    >
-      <SignupForm {...args} />
-    </AuthLayout>
-  </BrowserRouter>
-);
+  return (
+    <QueryClientProvider client={client}>
+      <BrowserRouter>
+        <SignupForm {...args} />
+      </BrowserRouter>
+    </QueryClientProvider>
+  );
+};
 
 export const Default = Template.bind({});
 Default.args = {
@@ -41,12 +34,4 @@ Default.args = {
 export const WithoutRegex = Template.bind({});
 WithoutRegex.args = {
   buttonText: "Sign Up",
-};
-
-export const WithLayout = View.bind({});
-WithoutRegex.args = {
-  buttonText: "Sign Up",
-  onSubmit: (val) => {
-    console.log("values", val);
-  },
 };

@@ -17,4 +17,7 @@ export interface SignupProps {
   onSuccess?: (data: Record<string, string | number>) => void;
   onError?: (error: string) => void;
   schema?: ZodSchema;
+  hideSignin?: boolean;
+  signinLink?: string;
+  signinText?: string;
 }

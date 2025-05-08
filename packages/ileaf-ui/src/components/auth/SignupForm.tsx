@@ -5,8 +5,8 @@ import HookFormTextInput from "../form/hook-form/HookFormTextInput";
 import Button from "../Button";
 import { Link } from "react-router-dom";
 import { SignupProps } from "../../types/signup.interface";
-import { defaultSignupSchema } from "src/schema/signup.schema";
 import useSignup from "@hooks/useSignup";
+import { defaultSignupSchema } from "../../schema/signup.schema";
 
 const SignupForm = ({
   buttonText = "Sign Up",
@@ -16,6 +16,9 @@ const SignupForm = ({
   onSuccess,
   onError,
   schema = defaultSignupSchema,
+  hideSignin = false,
+  signinLink = "/login",
+  signinText = "Login",
 }: SignupProps) => {
   const methods = useForm({
     resolver: zodResolver(schema),
@@ -96,16 +99,19 @@ const SignupForm = ({
           )}
         </form>
       </FormProvider>
-
-      <div className="flex mt-6 justify-center gap-x-2">
-        <p className="text-sm text-gray-600">Already have an account?</p>
-        <Link
-          className="font-semibold hover:underline text-sm text-primary"
-          to="/login"
-        >
-          Login
-        </Link>
-      </div>
+      {!hideSignin ? (
+        <div className="flex mt-6 justify-center gap-x-2">
+          <p className="text-sm text-gray-600">Already have an account?</p>
+          <Link
+            className="font-semibold hover:underline text-sm text-primary"
+            to={signinLink}
+          >
+            {signinText}
+          </Link>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
